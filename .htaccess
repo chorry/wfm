@@ -1,0 +1,17 @@
+AddDefaultCharset windows-1251
+AddCharset WINDOWS-1251 .js
+
+RewriteEngine On
+RewriteBase /sfo
+
+RewriteRule ^css/(.+)$ ./htdocs/css/$1 [L,QSA]
+RewriteRule ^img/(.+)$ ./htdocs/img/$1 [L,QSA]
+RewriteRule ^js/(.+)$  ./htdocs/js/$1 [L,QSA]
+RewriteRule ^login/(.+)$  ./htdocs/index.php [L,QSA]
+RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-l
+#RewriteCond %{REQUEST_URI} ^/sfo/.*$
+#RewriteCond %{REQUEST_URI} ^/sfo/.*$
+#RewriteRule ^(.*)$ sfo/htdocs/index.php [L,QSA]
+RewriteRule ^(.*)$ ./htdocs/index2.php [L,QSA]

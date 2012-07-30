@@ -1,0 +1,2 @@
+Replace Mustache with Handlebars/Hogan (mustache.js is slow as hell)
+Use distinct Function.caller and arguments.callee.caller for different browsers
