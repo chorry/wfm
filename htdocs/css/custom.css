@@ -1,0 +1,123 @@
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+
+#signin-dropdown {
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 1em;
+}
+#signin-dropdown form {
+    margin:0px;
+}
+#signin-dropdown form .textbox {
+    margin-bottom:0em;
+    padding-top:0em;
+}
+
+#signin-dropdown form .subchk {
+    margin-bottom: 5px;
+    padding-top: 8px;
+}
+
+#login, #password  {
+    color: #404040;
+    float: left;
+    font-size: 13px;
+    line-height: 18px;
+    padding-top: 0px;
+    text-align: left !important;
+    width: 140px;
+}
+
+#login-container{
+    position: relative;
+    min-height: 800px;
+    min-width: 740px;
+}
+
+#block-login{
+width: 305px;
+position: absolute;
+top: 50%;
+margin-top: -310px;
+left: 50%;
+margin-left: -203px;
+padding: 20px;
+background: #ccc;
+}
+
+#block-login h1 {
+    margin: 5px;
+    font-size: 20pt;
+}
+
+#block-login .control-label {
+    width: 40px;
+    font-size: 12pt;
+    height: 32pt;
+
+}
+
+#block-login .controls {
+    margin-left: 60px;
+}
+
+#block-login .big-input {
+    font-size: 30pt !important;
+    height: 32pt !important;
+    width: 100% !important;
+}
+
+.nav p {
+    color: white;
+    height: 100%;
+    padding: 9px 10px 11px;
+}
+
+#navbar {
+    z-index: 100 !important;
+}
+#jquery-stickers {
+    position: relative;
+    z-index: 10000 !important;
+}
+
+#jquery-stickers {
+    top: 40px !important;
+}
+
+.boxsizingBorder {
+width: 100%;
+box-sizing: border-box !important;
+-webkit-box-sizing:border-box;
+-moz-box-sizing: border-box;
+-ms-box-sizing: border-box;
+}
+
+
+/* DISPLAY FILELIST STYLES */
+.file_name_thumbs{
+    float: left;
+    min-width: 100%;
+    text-align: center;
+}
+
+.file_name_lists{
+    float: left;
+    min-width: 20%;
+    padding-right: 4px;
+}
+
+.filelist {
+    padding: 4px;
+}
+
+#file_list ul, ol {
+    margin: 0 0 9px 0px;
+}
+.hero-unit {
+    padding-top: 1px !important;
+    padding-left: 8px !important;
+}

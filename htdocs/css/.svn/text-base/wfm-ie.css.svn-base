@@ -1,0 +1,16 @@
+#block-login .big-input {
+    font-size: 26pt !important;
+    line-height: 28pt !important;
+}
+
+#block-login .controls {
+    margin-left: 0px !important;
+}
+
+.boxsizingBorder {
+    width: 80% !important;
+}
+
+.btn-group {
+    margin-left: 5px !important;;
+}

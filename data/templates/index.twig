@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-1251"/>
+
+	<title>stpFileOffice</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<!-- Le styles -->
+
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/custom.css" rel="stylesheet">
+	<style type="text/css">
+		body {
+			padding-top: 60px;
+			padding-bottom: 40px;
+		}
+
+		.sidebar-nav {
+			padding: 9px 0;
+		}
+
+		.selected_item {
+			border: 1px solid black;
+			background: #fff;
+		}
+
+		.modal_editor {
+			height: 600px;
+			max-height: 700px;
+		}
+
+		.modal_editor_body {
+			height: 450px;
+			max-height: 500px;
+		}
+
+		.modal {
+			left: 40%;
+		}
+
+		#myModal {
+			width: 60%;
+		}
+	</style>
+	<link href="css/bootstrap-responsive.css" rel="stylesheet">
+
+	<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+	<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+<body>
+<div class="navbar navbar-fixed-top" id="navbar">
+	<div class="navbar-inner">
+		<div class="container-fluid">
+
+			<a class="brand" href="#">stpFileOffice</a>
+
+			<div class="nav-collapse">
+				<ul class="nav">
+					<li><p>{{username}}</p></li>
+					<li class="active"><a href="logout">Выйти</a></li>
+					<li>
+
+						<a href="" class="dropdown" data-dropdown='dropdown'>
+							<span class="dropdown-toggle label label-info">{{ group_active.name }}</span>
+
+							<ul class="dropdown-menu group-select-menu" id='groups-dropdown'>
+								{% for group in groups %}
+								<li><span href="#" class="label label-info group-select-item"
+													group_id="{{group.id}}"> {{ group.name }} </span></li>
+								{% endfor %}
+							</ul>
+						</a>
+					</li>
+				</ul>
+				<ul class="nav pull-right">
+					<li class="divider-vertical"></li>
+					<li id="view_config"><a href="#"><i class="icon-question-sign icon-white icon-large"></i></a></li>
+				</ul>
+			</div>
+			<!--/.nav-collapse -->
+
+		</div>
+	</div>
+</div>
+<!-- below: sidebar template + main window template -->
+
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span2">
+			<div class="well sidebar-nav" id="directory_tree">
+				<ul class="nav nav-list">
+					<li class="nav-header">..</li>
+				</ul>
+			</div>
+			<!--/.well -->
+		</div>
+		<!--/span-->
+
+		<div class="span10">
+			<div class="row"><h1 id="id_dirname"></h1>
+
+				<h3 id="id_filepath"></h3>
+
+				<h3 id="id_fileurl"></h3></div>
+			<div class="row">
+				<div class="btn-toolbar">
+					<div class="btn-group">
+						<a class="btn fm_dircreate" href="#">
+							<i class="icon-plus"></i>Создать
+						</a>
+						<a class="btn dropdown-toggle" href="#" data-toggle="dropdown"><span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#" class="fm_dircreate"><i class="icon-folder-open"></i> папку</a></li>
+							<li><a href="#" class="fm_filecreate"><i class="icon-file"></i> файл</a></li>
+						</ul>
+					</div>
+
+					<div class="btn-group fm_rename">
+						<button class="btn"><i class="icon-pencil"></i>Переименовать</button>
+					</div>
+					<div class="btn-group fm_edit">
+						<button class="btn"><i class="icon-pencil"></i>Редактировать</button>
+					</div>
+					<div class="btn-group fm_delete">
+						<button class="btn btn-danger"><i class="icon-trash icon-white"></i>Удалить</button>
+					</div>
+					<div class="btn-group fm_upload">
+						<button class="btn btn-inverse"><i class="icon-upload icon-white"></i>Загрузить файл</button>
+					</div>
+					<div class="btn-group fm_download">
+						<button class="btn btn-inverse"><i class="icon-download icon-white"></i>Скачать файл</button>
+					</div>
+
+				</div>
+				<div class="hero-unit">
+					<div id="file_panel" class="btn-toolbar">
+						<div class="btn-group">
+							<button class="btn filelist_style" value="thumb"><i class="icon-th-large"></i></button>
+							<button class="btn filelist_style" value="list"><i class="icon-th-list"></i></button>
+						</div>
+
+						<div class="btn-group">
+							<button class="btn filelist_sorting" value="filename">NAME</button>
+							<button class="btn filelist_sorting" value="extension">EXT</button>
+							<button class="btn filelist_sorting" value="filesize">SIZE</button>
+						</div>
+					</div>
+					<div id="file_list"></div>
+					<!-- filelist -->
+				</div>
+			</div>
+		</div>
+		<!--/span-->
+
+	</div>
+	<!--/row-->
+
+	<hr>
+
+	<footer>
+	</footer>
+
+</div>
+<!--/.fluid-container-->
+
+
+<!-- Le javascript
+		================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="js/extlibs/jquery.js"></script>
+<script src="js/extlibs/jquery.stickr.js"></script>
+<script src="js/extlibs/chr_fileuploader.js"></script>
+<script src="js/extlibs/signals.min.js"></script>
+<script src="js/extlibs/mustache.js"></script>
+<script src="js/bootstrap/bootstrap-dropdown.js"></script>
+<script src="js/bootstrap/bootstrap-modal.js"></script>
+<script src="js/bootstrap/bootstrap-alert.js"></script>
+<script src="js/js_render.js"></script>
+<script src="js/js_filesort.js"></script>
+<script src="js/fileManaging.js" charset="windows-1251"></script>
+<script src="js/wfm/lang/lang.ru.js" charset="windows-1251"></script>
+<script src="js/wfm/wfm_signals.js" charset="windows-1251"></script>
+<script src="js/wfm/signals/file.js" charset="windows-1251"></script>
+<script src="js/wfm/signals/directory.js" charset="windows-1251"></script>
+<script src="js/wfm/signals/ui.js" charset="windows-1251"></script>
+<script src="js/wfm/wfm_modals.js" charset="windows-1251"></script>
+<script src="js/wfm/wfm_filemanager.js" charset="windows-1251"></script>
+</body>
+</html>

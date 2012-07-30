@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+		<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+
+    <title>stpFileOffice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+			.selected_item {
+				border: 1px solid black;
+				background: #fff;
+			}
+
+			.modal_editor { height: 600px; max-height: 700px; }
+			.modal_editor_body { height: 450px; max-height: 500px; }
+			.modal { left: 40%; }
+			#myModal { width: 60%; }
+    </style>
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+		<!--[if IE]> <link href="css/wfm-ie.css" rel="stylesheet" type="text/css"> <![endif]-->
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+
+		<div class="container" id="login-container">
+			<div id="block-login">
+			  <h1>Привет, %юзернейм%</h1>
+				<form id="login_form"  class="form-horizontal" accept-charset="UTF-8" action="/login" method="post">
+					<div class="control-group">
+					  <label class="control-label" for="login">Логин</label>
+					  	<div class="controls">
+								<input autocomplete="on" id="login" name="login" type="text" class="big-input" />
+							</div>
+					</div>
+					<div class="control-group">
+					  <label class="control-label" for="password">Пароль</label>
+					  	<div class="controls">
+								<input id="password" name="password" type="password" class="big-input"/>
+							</div>
+					</div>
+					<div class="control-group">
+						<center>
+						<input name="commit" type="submit" value="Вход" class=""/>
+						</center>
+					</div>
+				</form>
+			</div>
+		</div>
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/extlibs/jquery.js"></script>
+		<script src="js/extlibs/jquery.stickr.js"></script>
+  </body>
+</html>
